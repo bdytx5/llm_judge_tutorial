@@ -198,7 +198,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--num_samples", type=int, default=10, help="Number of samples to evaluate")
     parser.add_argument("--seed", type=int, default=42, help="Random seed")
-    parser.add_argument("--weave_project", type=str, default="byyoung3/arena", help="Weave project name")
+    parser.add_argument("--weave_project", type=str, default="arena", help="Weave project name")
     parser.add_argument("--judge_models", type=str, default="gpt-4o", help="Comma-separated judge models (e.g., 'litellm/openai/gpt-4o,litellm/openai/gpt-5')")
     args = parser.parse_args()
 

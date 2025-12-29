@@ -136,7 +136,7 @@ def generate_answer(question: str, model: str, temperature: float) -> str:
 def run_eval(model: str, num_samples: int = 10, seed: int = 42, judge_models: str = "gpt-4o"):
     """Run SimpleQA evaluation with the given model."""
     # Initialize Weave
-    weave.init("byyoung3/simpleqa")
+    weave.init("simpleqa")
 
     # Set temperature based on model
     temperature = 1.0 if "gpt-5" in model.lower() else 0.0

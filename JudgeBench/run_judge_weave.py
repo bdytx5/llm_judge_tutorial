@@ -219,6 +219,9 @@ def main(args: argparse.Namespace) -> None:
             # Log summary to Weave
             ev.log_summary(summary=summary)
             print(f"Logged summary to Weave: {ev.ui_url}")
+
+            # Finish the evaluation to clean up resources
+            ev.finish()
     else:
         print("No pairs to judge.")
 
@@ -250,7 +253,7 @@ if __name__ == "__main__":
     parser.add_argument('--seed', type=int, default=42, help='Random seed')
     parser.add_argument('--concurrency_limit', type=int, default=1, help='Number of concurrent judgments')
     parser.add_argument('--pairs', type=str, required=True, help='Path to jsonl containing pairs')
-    parser.add_argument('--weave_project', type=str, help='Weave project name (e.g., "your-entity/judge-bench")')
+    parser.add_argument('--weave_project', type=str, default='judgebench', help='Weave project name (e.g., "your-entity/judge-bench")')
     parser.add_argument('--save_local', action="store_true", help='Save to local file even when using Weave')
     parser.add_argument('--max_samples', type=int, help='Limit evaluation to first N samples (for testing)')
     args = parser.parse_args()

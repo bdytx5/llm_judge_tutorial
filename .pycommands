@@ -1,1 +1,1 @@
-1767034856	/Users/brettyoung/Desktop/dev25/tutorials/llm_judge	python judge_from_scratch_llmasajudge.py
+1767122052	/Users/brettyoung/Desktop/dev25/tutorials/llm_judge	python JudgeBench/run_judge_weave.py --pairs JudgeBench/data/dataset=judgebench,response_model=gpt-4o-2024-05-13.jsonl --judge_name arena_hard --judge_model litellm/openai/gpt-5 --max_samples 3

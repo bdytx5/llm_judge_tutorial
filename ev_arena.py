@@ -95,6 +95,8 @@ class ArenaDataset:
 
             # Get ground truth winner from dataset
             winner = row.get("winner", "tie")  # Can be "model_a", "model_b", or "tie"
+            if "tie" in winner.lower():
+                winner = "tie" # catch weird cases with explanations
 
             # Create judging prompt
             judge_prompt = (
@@ -129,7 +131,7 @@ class ArenaDataset:
             result = self.judge.judge(prompt=judge_prompt)
             # LLMAsAJudge returns {"correct": bool, "mode": str, "votes": list}
             # We use custom parser so mode should be "model_a", "model_b", or "tie"
-            return result.get("mode", "tie")
+            return result.get("result", "tie")
         except Exception as e:
             print(f"Judge error: {e}")
             return "tie"

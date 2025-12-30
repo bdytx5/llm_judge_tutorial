@@ -11,3 +11,4 @@ requests
 jinja2
 transformers
 llmasaujudge
+weave

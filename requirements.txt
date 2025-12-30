@@ -1,0 +1,14 @@
+datasets
+openai>=1.67.0
+anthropic==0.26.1
+litellm
+tqdm
+pyyaml
+backoff
+pydantic
+google-auth
+requests
+jinja2
+transformers
+llmasaujudge
+weave
